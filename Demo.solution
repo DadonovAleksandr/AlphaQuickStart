@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution Id="764dfc09-b4b0-42e7-99b3-14150e4f502b">
+  <Projects>
+    <Project FilePath="Demo.omx-project" />
+    <Project FilePath="Librarytypes\Librarytypes.omx-project" />
+  </Projects>
+</Solution>

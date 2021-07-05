@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<omx xmlns="system" migration="27" xmlns:ct="automation.control" xmlns:r="automation.reference" xmlns:a="automation">
+  <link-unit name="System" uuid="8ecc77c0-c67a-4335-82d0-25625decd20d" target="Om.System" />
+  <link-unit name="Server" uuid="c919cee2-48cc-44bd-9d5f-7a29b5f821f8" target="Om.Server" />
+  <link-unit name="PLC" uuid="749fd897-03db-40dc-aa7b-a70e79ef6fc8" target="Om.PLC" />
+  <namespace name="PLC_Types" uuid="f9425180-1fc1-454b-987e-f2d2edd4146a">
+    <a:aspect name="Aspect" uuid="72b693ac-7d7b-4e8d-b0ee-aa640591e3cd" />
+    <ct:type name="Type1" uuid="ca96d92d-6af8-479e-9c8a-0c988288bf21" aspect="Aspect" />
+  </namespace>
+  <namespace name="IOS_Types" uuid="a2953b32-22d5-43cf-8fd5-4d07990beb95">
+    <a:aspect name="Aspect" uuid="fa5d5cca-31d6-4c43-9e9b-35f86761f5f8" />
+    <ct:type name="Type1" uuid="b7ec80b6-2762-4c3f-9df0-11a5a02222b2" aspect="Aspect" original="PLC_Types.Type1">
+      <r:ref name="plc" uuid="44d3d284-8d2f-4ee8-8fc1-bed93521607d" type="PLC_Types.Type1" aspected="true" />
+    </ct:type>
+  </namespace>
+  <namespace name="XV" uuid="666e4abb-2554-45f0-8ccb-4ab6296034c5">
+    <ct:type name="PLC" uuid="bca0ce8a-506c-4b21-8758-cf79946fa6bf">
+      <ct:parameter name="Status" uuid="e386fed3-26af-40d0-9821-ac4664b5df20" direction="out" type="uint16" />
+      <ct:parameter name="Open" uuid="03f5c6b8-c0c6-47c8-ab94-0bc0ffde6006" type="bool" direction="in" />
+      <parameter name="Close" type="bool" direction="in" xmlns="automation.control" uuid="dbbff461-6eb5-48d2-a929-2b1e9b289afe" />
+    </ct:type>
+    <ct:type name="SCADA" uuid="27549247-dc97-42b3-ab25-8692f26d33d1" original="XV.PLC">
+      <r:ref name="_PLC" uuid="33cabf2d-8f69-4c3c-b856-7aa0efb93e50" type="XV.PLC" />
+      <ct:parameter name="Status" uuid="653f076e-acb3-4da8-901d-090010d9804f" direction="out" type="uint16" />
+      <ct:bind source="_PLC.Status" target="Status" />
+      <ct:parameter name="Open" uuid="44c657e3-e906-4f37-8034-f2028f08124c" direction="in" type="bool" />
+      <ct:bind source="Open" target="_PLC.Open" />
+      <ct:parameter name="Close" uuid="f7fd84a8-0ae6-45ba-b306-70559da3c246" direction="in" type="bool" />
+      <ct:bind source="Close" target="_PLC.Close" />
+      <ct:parameter name="ObjName" uuid="3c853413-7c3d-4eb1-abfd-7a5af3a89f4d" type="string" direction="out">
+        <attribute type="unit.System.Attributes.InitialValue" />
+        <attribute type="unit.Server.Attributes.InitialQuality" value="192" />
+      </ct:parameter>
+    </ct:type>
+  </namespace>
+  <namespace name="AI" uuid="4619595f-2b34-4883-92e1-f4ed2afaa8b3" />
+</omx>

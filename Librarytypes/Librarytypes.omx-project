@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Id="d80a130f-0b3c-4606-b8b7-e9f616a7c293" Version="1.0.0" OutputPath="bin\" UpgradeVersion="5">
+  <Files>
+    <SourceFile Name="Librarytypes.omx" />
+  </Files>
+</Project>

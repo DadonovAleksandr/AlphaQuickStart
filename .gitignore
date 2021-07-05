@@ -1,0 +1,8 @@
+# Specify filepatterns you want git to ignore.
+/bin/*
+/lib/*
+*.bak
+*.dgm
+/HMI/*.binom
+/Distrib/*
+*.binom

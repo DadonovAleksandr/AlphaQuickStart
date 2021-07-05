@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<omx xmlns="system" migration="27">
+  <link-unit name="System" uuid="724663ba-8816-4ac9-8df6-520e53c66162" target="Om.System" />
+  <link-unit name="Server" uuid="cf7e3e59-5b39-4177-97a6-29e442a78269" target="Om.Server" />
+  <link-unit name="PLC" uuid="a1290891-bcf1-43ad-aafb-b4e375afb2ca" target="Om.PLC" />
+</omx>
